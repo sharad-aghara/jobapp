@@ -1,8 +1,14 @@
 package com.sharad.firstjobapp.job;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "Job")
 public class Job {
 
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String title;
@@ -10,6 +16,9 @@ public class Job {
     private String minSalary;
     private String maxSalary;
     private String location;
+
+    public Job() {
+    }
 
     public Job(long id, String title, String description, String minSalary, String maxSalary, String location) {
         this.id = id;
